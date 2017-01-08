@@ -1,0 +1,49 @@
+
+Appendix A - Math Notation
+
+	=>		"implies"
+			if a is true => b must also be true
+
+	¬p		Logical negation. !p
+				¬p = p ? false : true
+
+	p∨q		Logical disjunction. p||q
+				return p||q ? true : false
+
+	p∧q		Logical conjuction. p&&q
+				return p&&q ? true : false
+
+	p=>q	Logical implication. if(p){q=true}
+				q = p ? true : false
+				¬q=>¬p
+				p = !q ? false : true
+
+	p<=>q	Logical equivalence. if(q){p=true}else{p=false}
+								 if(p){q=true}else{q=false}
+				p = q ? true : false
+				p iff q
+				(p=>q)∧(q=>p)
+
+
+
+
+Appendix B - Proofs
+Appendix C - C++ constructs
+
+
+odd(n)=>half(n) = half(n-1)
+bnoden:
+	bool isOdd(int n) {
+		return n/2 = (n-1)/2 ? true : false;
+	}
+
+int multiply1(int n, int a) {
+    if (n == 1) {return a;}
+    int result = multiply1(half(n), a +  a);
+    if (odd(n)) result = result + a;
+    return result;
+}
+
+bool odd(int n) { return n & 0x1; }
+int half(int n) { return n >> 1; }
+
